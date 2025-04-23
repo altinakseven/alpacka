@@ -10,13 +10,13 @@ import wabt from 'wabt';
 // Define the CLI program
 const program = new Command();
 program
-  .name('orbitals-container-generate')
+  .name('alpacka')
   .description('Generate a container WASM file from input data')
   .version('0.1.0');
 
-// Add the generate command
+// Add the pack command
 program
-  .command('generate')
+  .command('pack')
   .description('Generate a container WASM file from input data')
   .argument('<input>', 'Input file path (any file type)')
   .option('-o, --output <output>', 'Output file path', 'container.wasm')
@@ -57,7 +57,7 @@ program
     }
   });
 
-// Add a default command that just runs the generate command
+// Add a default command that just runs the pack command
 program
   .action(() => {
     console.error('Please specify a command or use --help for usage information');
